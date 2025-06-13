@@ -33,11 +33,19 @@
         </configuration>
       </plugin>
 
-      <!-- PMD Plugin -->
+      <!-- PMD Plugin with XML report configuration -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.21.2</version>
+        <configuration>
+          <targetJdk>11</targetJdk>
+          <printFailingErrors>true</printFailingErrors>
+          <linkXref>false</linkXref>
+          <reports>
+            <report>xml</report>
+          </reports>
+        </configuration>
         <executions>
           <execution>
             <phase>verify</phase>
